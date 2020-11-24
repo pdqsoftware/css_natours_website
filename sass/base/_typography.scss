@@ -1,0 +1,38 @@
+// All of the font settings are inherited, from this master body, by children pages
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    // font-size: 16px;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+}
+
+.heading-primary {
+    color: $color-white;
+    // The children will inherit the above white colour
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInFromLeft;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+    
+        animation-name: moveInFromRight;
+        animation-duration: 3s;
+    }
+}
