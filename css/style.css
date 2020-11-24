@@ -26,52 +26,41 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  /* x y pairs, starting at top left */
-  /* SQUARE clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100% ); */
-  /* TRIANGLE: clip-path: polygon(0 0, 100% 0, 50% 80%); */
-  /* PENTAGON clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80% ); */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  /* the fixed top/left positioning is taken from its parent: header */
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* The following percentages now refer to the element and not to the parent */
-  transform: translate(-50%, -70%);
-  text-align: center; }
+  .header__logo-box {
+    /* the fixed top/left positioning is taken from its parent: header */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
-  /* The children will inherit the above white colour */
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInFromLeft;
-  animation-duration: 3s;
-  animation-timing-function: ease-in; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-name: moveInFromRight;
-  animation-duration: 3s; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInFromLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-in; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInFromRight;
+    animation-duration: 3s; }
 
 @keyframes moveInFromLeft {
   0% {
@@ -103,8 +92,7 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -117,6 +105,9 @@ body {
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
@@ -125,6 +116,8 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -138,17 +131,9 @@ body {
   z-index: -1;
   transition: all 0.4s; }
 
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
 .btn--animated {
   animation-name: moveUpFromBottom;
   animation-duration: 3s;
   animation-timing-function: ease-out;
   animation-delay: 1.5s;
-  animation-fill-mode: backwards;
-  /* animation: moveUpfromBottom 3s ease-out 1.5s; */ }
+  animation-fill-mode: backwards; }
