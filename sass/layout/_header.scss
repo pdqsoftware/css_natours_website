@@ -16,7 +16,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
 
     &__logo-box {
-        // the fixed top/left positioning is taken from its parent: header
+        // the fixed top/left positioning is in relation to its parent, which is the header
         position: absolute;
         top: 4rem;
         left: 4rem;
