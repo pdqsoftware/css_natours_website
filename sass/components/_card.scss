@@ -17,13 +17,20 @@
         width: 100%;
         backface-visibility: hidden;
 
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
         &--front {
             background-color: $color-white;
         }
 
         &--back {
-            background-color: green;
             transform: rotateY(180deg);
+
+            &-1 {
+                // background-color: green;
+                background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
+            }
         }
     }
 
